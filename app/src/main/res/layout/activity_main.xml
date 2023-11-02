@@ -200,6 +200,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="30dp"/>
 
+    <include layout="@layout/line_path_movement"
+        app:layout_constraintBottom_toBottomOf="@id/imgTopLeft"
+        app:layout_constraintStart_toStartOf="@id/imgTopLeft"
+        app:layout_constraintTop_toTopOf="@id/imgTopLeft"/>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/wrapCenter"
         android:layout_width="400dp"
@@ -231,13 +236,19 @@
                 android:id="@+id/boat"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:src="@drawable/ic_record"
+                android:src="@drawable/gradient_border"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include layout="@layout/circular_path_movement"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <ImageView
             android:layout_width="100dp"

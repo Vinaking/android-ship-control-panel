@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:autoTransition="animateToEnd"
+        motion:duration="2500">
+        <KeyFrameSet>
+            <KeyPosition
+                motion:motionTarget="@+id/circle1"
+                motion:framePosition="25"
+                motion:keyPositionType="pathRelative"
+                motion:percentX="0.2"
+                motion:percentY="-0.19" />
+            <KeyPosition
+                motion:motionTarget="@+id/circle1"
+                motion:framePosition="50"
+                motion:keyPositionType="pathRelative"
+                motion:percentX="0.5"
+                motion:percentY="-0.27" />
+            <KeyPosition
+                motion:motionTarget="@+id/circle1"
+                motion:framePosition="75"
+                motion:keyPositionType="pathRelative"
+                motion:percentX="0.8"
+                motion:percentY="-0.19" />
+            <KeyPosition
+                motion:motionTarget="@+id/circle2"
+                motion:framePosition="25"
+                motion:keyPositionType="pathRelative"
+                motion:percentX="0.3"
+                motion:percentY="-0.16" />
+            <KeyPosition
+                motion:motionTarget="@+id/circle2"
+                motion:framePosition="50"
+                motion:keyPositionType="pathRelative"
+                motion:percentX="0.65"
+                motion:percentY="-0.17" />
+            <KeyPosition
+                motion:motionTarget="@+id/circle3"
+                motion:framePosition="25"
+                motion:keyPositionType="pathRelative"
+                motion:percentX="0.29"
+                motion:percentY="-0.16" />
+            <KeyPosition
+                motion:motionTarget="@+id/circle3"
+                motion:framePosition="50"
+                motion:keyPositionType="pathRelative"
+                motion:percentX="0.65"
+                motion:percentY="-0.18" />
+            <KeyAttribute
+                motion:motionTarget="@+id/circle1"
+                motion:framePosition="90"
+                android:alpha="1" />
+            <KeyAttribute
+                motion:motionTarget="@+id/circle2"
+                motion:framePosition="90"
+                android:alpha="1" />
+            <KeyAttribute
+                motion:motionTarget="@+id/circle3"
+                motion:framePosition="90"
+                android:alpha="1" />
+            <KeyAttribute
+                motion:motionTarget="@+id/circle1"
+                motion:framePosition="100"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@+id/circle2"
+                motion:framePosition="100"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@+id/circle3"
+                motion:framePosition="100"
+                android:alpha="0" />
+
+        </KeyFrameSet>
+    </Transition>
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@+id/start"
+        motion:autoTransition="jumpToStart">
+        <KeyFrameSet >
+
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/circle1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="95dp" />
+        <Constraint
+            android:layout_height="30dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_width="30dp"
+            android:id="@+id/circle2"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="28dp"
+            android:layout_marginTop="140dp" />
+        <Constraint
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/circle3"
+            android:layout_marginTop="310dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="160dp" />
+        <Constraint
+            android:id="@+id/circle4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="105dp" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/circle1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="60dp"
+            android:layout_marginTop="95dp" />
+        <Constraint
+            android:id="@+id/circle2"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="155dp"
+            android:layout_marginTop="312dp" />
+        <Constraint
+            android:id="@+id/circle3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="150dp" />
+        <Constraint
+            android:id="@+id/circle4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+</MotionScene>
