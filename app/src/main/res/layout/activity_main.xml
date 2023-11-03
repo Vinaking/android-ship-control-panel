@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+    
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glVerticalCenter"
         android:layout_width="wrap_content"
@@ -146,11 +146,10 @@
         app:layout_constraintBottom_toBottomOf="@id/imgControl"
         app:layout_constraintStart_toEndOf="@id/imgControl" />
 
-
     <ImageView
-        android:layout_width="50dp"
+        android:layout_width="3dp"
         android:layout_height="0dp"
-        android:src="@drawable/ic_line"
+        android:src="@drawable/line_vertical"
         android:scaleType="fitXY"
         android:layout_marginTop="-10dp"
         app:layout_constraintTop_toBottomOf="@+id/imgTopLeft"
@@ -159,17 +158,57 @@
         app:layout_constraintEnd_toEndOf="@+id/imgCenterLeft"/>
 
     <ImageView
-        android:layout_width="50dp"
+        android:id="@+id/straight_line"
+        android:layout_width="3dp"
         android:layout_height="0dp"
-        android:src="@drawable/ic_90_angle"
+        android:src="@drawable/line_vertical"
         android:scaleType="fitXY"
-        android:layout_marginTop="-30dp"
+        android:layout_marginTop="-10dp"
         app:layout_constraintTop_toBottomOf="@+id/imgTopLeft"
         app:layout_constraintEnd_toEndOf="@+id/imgTopLeft"
         app:layout_constraintStart_toStartOf="@+id/imgTopLeft"
         app:layout_constraintBottom_toTopOf="@+id/wrapCenter"
-        android:layout_marginStart="45dp"
-        android:layout_marginBottom="-170dp"/>
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="-140dp"/>
+
+    <View
+        android:layout_width="66dp"
+        android:layout_height="4dp"
+        android:background="@drawable/line_vertical"
+        android:layout_marginTop="-4dp"
+        app:layout_constraintTop_toBottomOf="@+id/straight_line"
+        app:layout_constraintEnd_toEndOf="@+id/imgTopLeft"
+        app:layout_constraintStart_toStartOf="@+id/straight_line" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="100dp"
+        android:layout_height="280dp"
+        android:layout_marginRight="-20dp"
+        app:layout_constraintTop_toBottomOf="@id/imgTopLeft"
+        app:layout_constraintStart_toStartOf="@id/imgTopLeft"
+        app:layout_constraintEnd_toEndOf="@id/imgCenterLeft"
+        app:layout_constraintBottom_toTopOf="@id/imgCenterLeft">
+
+        <include layout="@layout/line_path_movement"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <ImageView-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:src="@drawable/ic_90_angle"-->
+<!--        android:scaleType="fitXY"-->
+<!--        android:layout_marginTop="-30dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imgTopLeft"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/imgTopLeft"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/imgTopLeft"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/wrapCenter"-->
+<!--        android:layout_marginStart="45dp"-->
+<!--        android:layout_marginBottom="-170dp"/>-->
 
     <ImageView
         android:id="@+id/imgTopLeft"
@@ -200,10 +239,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="30dp"/>
 
-    <include layout="@layout/line_path_movement"
-        app:layout_constraintBottom_toBottomOf="@id/imgTopLeft"
-        app:layout_constraintStart_toStartOf="@id/imgTopLeft"
-        app:layout_constraintTop_toTopOf="@id/imgTopLeft"/>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/wrapCenter"
@@ -218,10 +254,10 @@
             android:id="@+id/guideBoat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintGuide_percent="0.35"
-            app:layout_constraintTop_toTopOf="parent"
-            android:orientation="horizontal"/>
+            app:layout_constraintGuide_begin="140dp"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/wrapBoat"
@@ -233,7 +269,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/boat"
+                android:id="@+id/gradient_border"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:src="@drawable/gradient_border"
@@ -241,6 +277,18 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/boat"
+                android:layout_width="80dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="-30dp"
+                android:src="@drawable/boat_top_view"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -279,7 +327,5 @@
             app:layout_constraintEnd_toStartOf="@id/wrapBoat"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

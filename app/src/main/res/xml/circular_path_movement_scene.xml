@@ -95,7 +95,7 @@
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="60dp"
-            android:layout_marginTop="95dp" />
+            android:layout_marginTop="100dp" />
         <Constraint
             android:layout_height="30dp"
             motion:layout_constraintTop_toTopOf="parent"
