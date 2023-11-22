@@ -183,38 +183,19 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="100dp"
         android:layout_height="280dp"
-        android:layout_marginRight="-20dp"
+        android:layout_marginStart="-20dp"
         app:layout_constraintTop_toBottomOf="@id/imgTopLeft"
-        app:layout_constraintStart_toStartOf="@id/imgTopLeft"
-        app:layout_constraintEnd_toEndOf="@id/imgCenterLeft"
+        app:layout_constraintStart_toStartOf="@id/imgCenterLeft"
+        app:layout_constraintEnd_toEndOf="@id/imgTopLeft"
         app:layout_constraintBottom_toTopOf="@id/imgCenterLeft">
 
-        <include layout="@layout/line_path_movement"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
-        <include layout="@layout/line_path_test"
+        <include layout="@layout/draw_line_path"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--    <ImageView-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:src="@drawable/ic_90_angle"-->
-<!--        android:scaleType="fitXY"-->
-<!--        android:layout_marginTop="-30dp"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/imgTopLeft"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/imgTopLeft"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/imgTopLeft"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/wrapCenter"-->
-<!--        android:layout_marginStart="45dp"-->
-<!--        android:layout_marginBottom="-170dp"/>-->
 
     <ImageView
         android:id="@+id/imgTopLeft"
@@ -244,8 +225,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="30dp"/>
-
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/wrapCenter"
@@ -298,13 +277,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <include layout="@layout/circular_path_movement"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-        <include layout="@layout/circular_path_test"
+        <include layout="@layout/draw_circle_path"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
